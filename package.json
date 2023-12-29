@@ -1,5 +1,5 @@
 {
-  "name": "nestjs-crud-prisma",
+  "name": "@vutadev/nestjs-crud-prisma",
   "version": "0.0.19",
   "description": "crud for restful apis built with nestjs and prisma",
   "keywords": [
@@ -10,9 +10,9 @@
     "api",
     "rest"
   ],
-  "homepage": "https://github.com/codejamninja/nestjs-crud-prisma",
+  "homepage": "https://github.com/vutadev/nestjs-crud-prisma",
   "bugs": {
-    "url": "https://github.com/codejamninja/nestjs-crud-prisma/issues",
+    "url": "https://github.com/vutadev/nestjs-crud-prisma/issues",
     "email": "jam@codejam.ninja"
   },
   "license": "MIT",
@@ -27,7 +27,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codejamninja/nestjs-crud-prisma"
+    "url": "https://github.com/vutadev/nestjs-crud-prisma"
   },
   "scripts": {
     "build": "make -s build",
@@ -53,6 +53,7 @@
     "@nestjsx/crud-request": "^4.6.2",
     "@nestjsx/util": "^4.6.2",
     "@types/express": "^4.17.9",
+    "@vutadev/nestjs-crud-prisma": "^0.0.19",
     "class-validator": "^0.13.2",
     "core-js": "^3.8.1",
     "deepmerge": "^4.2.2",

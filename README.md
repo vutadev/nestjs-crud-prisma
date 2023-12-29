@@ -2,7 +2,7 @@
 
 ![](assets/nestjs-crud-prisma.png)
 
-[![GitHub stars](https://img.shields.io/github/stars/codejamninja/nestjs-crud-prisma.svg?style=social&label=Stars)](https://github.com/codejamninja/nestjs-crud-prisma)
+[![GitHub stars](https://img.shields.io/github/stars/vutadev/nestjs-crud-prisma.svg?style=social&label=Stars)](https://github.com/vutadev/nestjs-crud-prisma)
 
 > crud for restful apis built with nestjs and prisma
 
@@ -89,25 +89,25 @@ npm install --save nestjs-crud-prisma
 
 ## Support
 
-Submit an [issue](https://github.com/codejamninja/nestjs-crud-prisma/issues/new)
+Submit an [issue](https://github.com/vutadev/nestjs-crud-prisma/issues/new)
 
 ## Screenshots
 
-[Contribute](https://github.com/codejamninja/nestjs-crud-prisma/blob/master/CONTRIBUTING.md) a screenshot
+[Contribute](https://github.com/vutadev/nestjs-crud-prisma/blob/master/CONTRIBUTING.md) a screenshot
 
 ## Contributing
 
-Review the [guidelines for contributing](https://github.com/codejamninja/nestjs-crud-prisma/blob/master/CONTRIBUTING.md)
+Review the [guidelines for contributing](https://github.com/vutadev/nestjs-crud-prisma/blob/master/CONTRIBUTING.md)
 
 ## License
 
-[MIT License](https://github.com/codejamninja/nestjs-crud-prisma/blob/master/LICENSE)
+[MIT License](https://github.com/vutadev/nestjs-crud-prisma/blob/master/LICENSE)
 
 [Jam Risser](https://codejam.ninja) © 2020
 
 ## Changelog
 
-Review the [changelog](https://github.com/codejamninja/nestjs-crud-prisma/blob/master/CHANGELOG.md)
+Review the [changelog](https://github.com/vutadev/nestjs-crud-prisma/blob/master/CHANGELOG.md)
 
 ## Credits
 
@@ -117,7 +117,7 @@ Review the [changelog](https://github.com/codejamninja/nestjs-crud-prisma/blob/m
 
 A ridiculous amount of coffee ☕ ☕ ☕ was consumed in the process of building this project.
 
-[Add some fuel](https://liberapay.com/codejamninja/donate) if you'd like to keep me going!
+[Add some fuel](https://liberapay.com/vutadev/donate) if you'd like to keep me going!
 
-[![Liberapay receiving](https://img.shields.io/liberapay/receives/codejamninja.svg?style=flat-square)](https://liberapay.com/codejamninja/donate)
-[![Liberapay patrons](https://img.shields.io/liberapay/patrons/codejamninja.svg?style=flat-square)](https://liberapay.com/codejamninja/donate)
+[![Liberapay receiving](https://img.shields.io/liberapay/receives/vutadev.svg?style=flat-square)](https://liberapay.com/vutadev/donate)
+[![Liberapay patrons](https://img.shields.io/liberapay/patrons/vutadev.svg?style=flat-square)](https://liberapay.com/vutadev/donate)

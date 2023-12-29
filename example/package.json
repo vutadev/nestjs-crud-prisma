@@ -7,9 +7,9 @@
     "nestjs",
     "example"
   ],
-  "homepage": "https://github.com/codejamninja/nestjs-example",
+  "homepage": "https://github.com/vutadev/nestjs-example",
   "bugs": {
-    "url": "https://github.com/codejamninja/nestjs-example/issues",
+    "url": "https://github.com/vutadev/nestjs-example/issues",
     "email": "jam@codejam.ninja"
   },
   "license": "MIT",
@@ -24,7 +24,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codejamninja/nestjs-example"
+    "url": "https://github.com/vutadev/nestjs-example"
   },
   "scripts": {
     "build": "make -s build",
@@ -118,6 +118,6 @@
     "indent": 4
   },
   "docker": {
-    "registry": "codejamninja"
+    "registry": "vutadev"
   }
 }

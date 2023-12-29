@@ -140,7 +140,6 @@ export class PrismaCrudService<T> extends CrudService<T> {
                 } else {
                   include[relation.field] = true;
                 }
-                console.log(include);
                 return include;
               }, {})
             }
@@ -193,7 +192,6 @@ export class PrismaCrudService<T> extends CrudService<T> {
                 } else {
                   include[relation.field] = true;
                 }
-                console.log(include);
                 return include;
               }, {})
             }
