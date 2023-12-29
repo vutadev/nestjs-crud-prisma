@@ -123,7 +123,28 @@ export class PrismaCrudService<T> extends CrudService<T> {
             }
           : {}),
         ...(parsed.limit ? { take: parsed.limit } : {}),
-        ...(isPaginated && parsed.offset ? { skip: parsed.offset } : {})
+        ...(isPaginated && parsed.offset ? { skip: parsed.offset } : {}),
+        ...(parsed.join
+          ? {
+              include: parsed.join.reduce((include: any, relation: any) => {
+                if (relation.select && Array.isArray(relation.select)) {
+                  for (const select of relation.select) {
+                    if (!include[relation.field]) {
+                      include[relation.field] = {};
+                    }
+                    if (!include[relation.field].select) {
+                      include[relation.field].select = {};
+                    }
+                    include[relation.field].select[select] = true;
+                  }
+                } else {
+                  include[relation.field] = true;
+                }
+                console.log(include);
+                return include;
+              }, {})
+            }
+          : {})
       });
       if (isPaginated) {
         const total = await this.client.count();
@@ -138,7 +159,7 @@ export class PrismaCrudService<T> extends CrudService<T> {
         return response;
       }
       return result;
-    } catch (err) {
+    } catch (err: any) {
       if (
         err.toString().includes('Invalid') &&
         err.toString().includes('invocation:')
@@ -155,13 +176,34 @@ export class PrismaCrudService<T> extends CrudService<T> {
       const res = await this.client.findUnique({
         where: {
           id: userID.value
-        }
+        },
+        ...(req.parsed.join
+          ? {
+              include: req.parsed.join.reduce((include: any, relation: any) => {
+                if (relation.select && Array.isArray(relation.select)) {
+                  for (const select of relation.select) {
+                    if (!include[relation.field]) {
+                      include[relation.field] = {};
+                    }
+                    if (!include[relation.field].select) {
+                      include[relation.field].select = {};
+                    }
+                    include[relation.field].select[select] = true;
+                  }
+                } else {
+                  include[relation.field] = true;
+                }
+                console.log(include);
+                return include;
+              }, {})
+            }
+          : {})
       });
       if (res === null) {
         this.throwNotFoundException(`${this.tableName}`);
       }
       return res;
-    } catch (err) {
+    } catch (err: any) {
       this.throwBadRequestException('Bad Request');
       throw err;
     }
@@ -173,7 +215,7 @@ export class PrismaCrudService<T> extends CrudService<T> {
         data: dto
       });
       return res;
-    } catch (err) {
+    } catch (err: any) {
       if (
         err.toString().includes('Invalid') &&
         err.toString().includes('invocation:')
@@ -193,7 +235,7 @@ export class PrismaCrudService<T> extends CrudService<T> {
             data: item
           });
           return res;
-        } catch (err) {
+        } catch (err: any) {
           if (
             err.toString().includes('Invalid') &&
             err.toString().includes('invocation:')
@@ -217,7 +259,7 @@ export class PrismaCrudService<T> extends CrudService<T> {
         data: dto
       });
       return res;
-    } catch (err) {
+    } catch (err: any) {
       if (
         err.toString().includes('Invalid') &&
         err.toString().includes('invocation:')
@@ -241,7 +283,7 @@ export class PrismaCrudService<T> extends CrudService<T> {
         }
       });
       return res;
-    } catch (err) {
+    } catch (err: any) {
       if (
         err.toString().includes('Invalid') &&
         err.toString().includes('invocation:')
