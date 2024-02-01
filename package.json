@@ -1,6 +1,6 @@
 {
   "name": "@vutadev/nestjs-crud-prisma",
-  "version": "0.0.19",
+  "version": "0.0.21",
   "description": "crud for restful apis built with nestjs and prisma",
   "keywords": [
     "nestjs-crud-prisma",

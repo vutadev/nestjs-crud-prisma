@@ -162,7 +162,7 @@ ifeq ($(PLATFORM), win32)
 		-e !/*/pnpm-lock.yaml \
 		-e !/*/package-lock.json
 else
-	-@$(GIT) clean -fXd \
+	-@ $(GIT) clean -fXd \
 		-e \!/node_modules \
 		-e \!/node_modules/**/* \
 		-e \!/yarn.lock \

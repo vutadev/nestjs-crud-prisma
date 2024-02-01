@@ -85,11 +85,22 @@ export class PrismaCrudService<T> extends CrudService<T> {
     }
   }
 
+  recoverOne(req: CrudRequest) {}
+
   async getMany({
     parsed,
     options
   }: CrudRequest): Promise<GetManyDefaultResponse<T> | T[]> {
     const isPaginated = this.decidePagination(parsed, options);
+    let { limit, offset } = parsed;
+    if (!limit && options?.query?.limit) {
+      limit = options?.query?.limit;
+    }
+    if (options?.query?.maxLimit) {
+      if (!limit || limit > options?.query?.maxLimit) {
+        limit = options?.query?.maxLimit;
+      }
+    }
     try {
       const result = await this.client.findMany({
         ...(parsed.sort.length > 0
@@ -122,7 +133,7 @@ export class PrismaCrudService<T> extends CrudService<T> {
               where: await this.getWhereInputFromSearch(parsed.search)
             }
           : {}),
-        ...(parsed.limit ? { take: parsed.limit } : {}),
+        ...(limit ? { take: limit } : {}),
         ...(isPaginated && parsed.offset ? { skip: parsed.offset } : {}),
         ...(parsed.join
           ? {
@@ -147,7 +158,6 @@ export class PrismaCrudService<T> extends CrudService<T> {
       });
       if (isPaginated) {
         const total = await this.client.count();
-        const { limit, offset } = parsed;
         const response: GetManyDefaultResponse<T> = {
           data: result,
           count: result.length,
